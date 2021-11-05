@@ -142,6 +142,7 @@ window.addEventListener('DOMContentLoaded', () => {
         modal.classList.add('show');
         modal.classList.remove('hide');
         document.body.style.overflow = 'hidden'; // не дает странице прокручиваться
+        clearInterval(modalTimerId); //  если пользователь уже открывал модальное окно что бы оно больше не срабатывалию
     }
 
     function hideModal() {
@@ -150,9 +151,31 @@ window.addEventListener('DOMContentLoaded', () => {
         modal.classList.remove('show');
         document.body.style.overflow = '';
     }
+    modalTrigger.forEach(btn => {
+        btn.addEventListener("click", showModal);
+    });
 
-    modalTrigger.addEventListener("click", showModal);
     modalCloseBtn.addEventListener('click', hideModal);
+    modal.addEventListener('click', (e) => {
+        let target = e.target;
+        if (target === modal) {
+            hideModal();
+        };
+    })
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Escape' && modal.classList.contains('show')) {
+            hideModal();
+        };
 
+    });
+    const modalTimerId = setTimeout(showModal, 2000);
 
+    function showModalByScroll() {
+        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+            showModal();
+            window.removeEventListener('scroll', showModalByScroll);
+        }
+    }
+
+    window.addEventListener('scroll', showModalByScroll);
 });
