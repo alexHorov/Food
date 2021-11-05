@@ -129,4 +129,28 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
     setCloсk('.timer', deadline);
+
+    //// Modal
+
+    const modalTrigger = document.querySelector('[data-modal]'),
+        modalCloseBtn = document.querySelector('[data-close]'),
+        modal = document.querySelector('.modal');
+
+
+    function showModal() {
+        // modal.style.display = 'block';
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+    }
+
+    function hideModal() {
+        // modal.style.display = 'none';
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+    }
+
+    modalTrigger.addEventListener("click", showModal);
+    modalCloseBtn.addEventListener('click', hideModal);
+
+
 });
