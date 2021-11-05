@@ -132,7 +132,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //// Modal
 
-    const modalTrigger = document.querySelector('[data-modal]'),
+    const modalTrigger = document.querySelectorAll('[data-modal]'),
         modalCloseBtn = document.querySelector('[data-close]'),
         modal = document.querySelector('.modal');
 
@@ -141,12 +141,14 @@ window.addEventListener('DOMContentLoaded', () => {
         // modal.style.display = 'block';
         modal.classList.add('show');
         modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden'; // не дает странице прокручиваться
     }
 
     function hideModal() {
         // modal.style.display = 'none';
         modal.classList.add('hide');
         modal.classList.remove('show');
+        document.body.style.overflow = '';
     }
 
     modalTrigger.addEventListener("click", showModal);
