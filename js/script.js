@@ -279,7 +279,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 `display: block;
             margin: 0 auto;
             `;
-            form.appendChild(statusMessage);
+            // form.appendChild(statusMessage);
+            form.insertAdjacentElement('afterend', statusMessage); // заменили строку вверху
 
             const request = new XMLHttpRequest();
             request.open('POST', 'server.php');
@@ -332,5 +333,14 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     }
 
+    fetch('https://jsonplaceholder.typicode.com/todos/1', {
+            method: "POST",
+            body: JSON.stringify({ name: 'Alex' }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(json => console.log(json));
 
 });
