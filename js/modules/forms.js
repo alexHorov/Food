@@ -1,3 +1,5 @@
+import { closeModal, openModal } from '.modal';
+
 function forms() {
     // Forms
     const forms = document.querySelectorAll('form');
@@ -85,4 +87,4 @@ function forms() {
         }, 4000);
     }
 }
-module.exports = forms;
+export default forms;

@@ -191,4 +191,4 @@ list-style: none;
     // }
 
 }
-module.exports = slider;
+export default slider;

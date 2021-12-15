@@ -1,3 +1,16 @@
+function closeModal() {
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+function openModal() {
+    modal.classList.add('show');
+    modal.classList.remove('hide');
+    document.body.style.overflow = 'hidden';
+    clearInterval(modalTimerId);
+}
+
 function modal() {
     // Modal
 
@@ -8,18 +21,6 @@ function modal() {
         btn.addEventListener('click', openModal);
     });
 
-    function closeModal() {
-        modal.classList.add('hide');
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
-    }
-
-    function openModal() {
-        modal.classList.add('show');
-        modal.classList.remove('hide');
-        document.body.style.overflow = 'hidden';
-        clearInterval(modalTimerId);
-    }
 
     modal.addEventListener('click', (e) => {
         if (e.target === modal || e.target.getAttribute('data-close') == "") {
@@ -44,4 +45,6 @@ function modal() {
     }
     window.addEventListener('scroll', showModalByScroll);
 }
-module.exports = modal;
+export default modal;
+export { closeModal };
+export { openModal };
