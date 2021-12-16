@@ -1,26 +1,38 @@
 {
-  "name": "food",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexHorov/Food.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alexHorov/Food/issues"
-  },
-  "homepage": "https://github.com/alexHorov/Food#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "json-server": "^0.17.0",
-    "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
-  },
-  "keywords": [],
-  "description": ""
+    "name": "food",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alexHorov/Food.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/alexHorov/Food/issues"
+    },
+    "homepage": "https://github.com/alexHorov/Food#readme",
+    "dependencies": {
+        "@babel/polyfill": "^7.12.1",
+        "es6-promise": "^4.2.8",
+        "nodelist-foreach-polyfill": "^1.2.0"
+    },
+    "browserslist": [
+        "> 1%"
+    ],
+    "devDependencies": {
+        "@babel/cli": "^7.16.0",
+        "@babel/core": "^7.16.5",
+        "@babel/preset-env": "^7.16.5",
+        "babel-loader": "^8.2.3",
+        "core-js": "^3.20.0",
+        "json-server": "^0.17.0",
+        "webpack": "^5.65.0",
+        "webpack-cli": "^4.9.1"
+    },
+    "keywords": [],
+    "description": ""
 }
